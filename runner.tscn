@@ -11,7 +11,10 @@ script = ExtResource("1_f7b3c")
 
 [node name="Skin" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+z_index = 2
 texture = ExtResource("2_5pwe8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hfbw2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
