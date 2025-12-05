@@ -11,7 +11,6 @@ y_sort_enabled = true
 position = Vector2(125, -103)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_yasw7")]
-z_index = 2
 position = Vector2(430, -163)
 
 [node name="Circuit" parent="." instance=ExtResource("3_4o7yg")]
