@@ -6,6 +6,7 @@
 size = Vector2(128, 86.29036)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uln8b")
