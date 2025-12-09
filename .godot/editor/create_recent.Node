@@ -1,5 +1,6 @@
-CanvasGroup
 Sprite2D
+SubViewport
+CanvasGroup
 Camera2D
 CollisionPolygon2D
 StaticBody2D

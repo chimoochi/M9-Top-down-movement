@@ -1,13 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw7oebjpdt5r8"]
+[gd_scene load_steps=8 format=3 uid="uid://bw7oebjpdt5r8"]
 
 [ext_resource type="Script" uid="uid://cf2tlt4hj8m8h" path="res://runner.gd" id="1_f7b3c"]
+[ext_resource type="Shader" uid="uid://daxeapcdm23ln" path="res://assets/character_contour.gdshader" id="1_hfbw2"]
 [ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="2_5pwe8"]
 [ext_resource type="PackedScene" uid="uid://bm8s1oaoxngwq" path="res://assets/runner/runner_visual_red.tscn" id="2_f7b3c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfbw2"]
 radius = 35.128338
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hfbw2"]
+shader = ExtResource("1_hfbw2")
+shader_parameter/viewport_scale = Vector2(1, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 1.21
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5pwe8"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Runner" type="CharacterBody2D"]
+position = Vector2(0, 11)
 script = ExtResource("1_f7b3c")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -21,10 +32,18 @@ position = Vector2(0, -33)
 scale = Vector2(0.3600008, 0.5999979)
 shape = SubResource("CircleShape2D_hfbw2")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="RunnerVisualRed" parent="CanvasGroup" instance=ExtResource("2_f7b3c")]
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(100, 100)
+
+[node name="RunnerVisualRed" parent="SubViewport" instance=ExtResource("2_f7b3c")]
 unique_name_in_owner = true
+position = Vector2(50.49, 85.98)
 scale = Vector2(0.3, 0.3)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hfbw2")
+position = Vector2(0, -33)
+texture = SubResource("ViewportTexture_5pwe8")
