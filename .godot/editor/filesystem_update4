@@ -1,2 +1,6 @@
 res://runner.tscn
 res://runner.gdshader
+res://node_2d.tscn
+res://dust.tscn
+res://lessons/circuit.tscn
+res://runner.gd

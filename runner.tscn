@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw7oebjpdt5r8"]
+[gd_scene load_steps=9 format=3 uid="uid://bw7oebjpdt5r8"]
 
 [ext_resource type="Script" uid="uid://cf2tlt4hj8m8h" path="res://runner.gd" id="1_f7b3c"]
 [ext_resource type="Shader" uid="uid://daxeapcdm23ln" path="res://assets/character_contour.gdshader" id="1_hfbw2"]
 [ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="2_5pwe8"]
 [ext_resource type="PackedScene" uid="uid://bm8s1oaoxngwq" path="res://assets/runner/runner_visual_red.tscn" id="2_f7b3c"]
+[ext_resource type="PackedScene" uid="uid://clocrjlx2h2or" path="res://dust.tscn" id="5_44hxy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfbw2"]
 radius = 35.128338
@@ -47,3 +48,7 @@ scale = Vector2(0.3, 0.3)
 material = SubResource("ShaderMaterial_hfbw2")
 position = Vector2(0, -33)
 texture = SubResource("ViewportTexture_5pwe8")
+
+[node name="Dust" parent="." instance=ExtResource("5_44hxy")]
+unique_name_in_owner = true
+z_index = -1

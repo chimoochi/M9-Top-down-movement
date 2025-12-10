@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://clocrjlx2h2or"]
+
+[ext_resource type="Texture2D" uid="uid://cstq0cfuqtntw" path="res://assets/kenney-particles/smoke_08.png" id="1_wtcfe"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0e48y"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_epypp"]
+offsets = PackedFloat32Array(0, 0.22473118, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0hol4"]
+gradient = SubResource("Gradient_epypp")
+
+[sub_resource type="Curve" id="Curve_q6r6c"]
+_data = [Vector2(0, 0), 0.0, 1.6797906, 0, 0, Vector2(0.08958332, 0.055896997), -0.2014918, -0.2014918, 0, 0, Vector2(1, 0.0025372505), -0.014987346, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kdubu"]
+curve = SubResource("Curve_q6r6c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d21ai"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -130, 0)
+scale_curve = SubResource("CurveTexture_kdubu")
+color_ramp = SubResource("GradientTexture1D_0hol4")
+
+[node name="Dust" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_0e48y")
+emitting = false
+amount = 30
+texture = ExtResource("1_wtcfe")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_d21ai")
