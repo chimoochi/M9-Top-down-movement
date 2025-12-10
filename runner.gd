@@ -33,4 +33,4 @@ func _physics_process(delta: float) -> void:
 		_dust.emitting = true
 	else:
 		_runner_visual.animation_name = RunnerVisual.Animations.IDLE
-		_dust.emitting = true
+		_dust.emitting = false
