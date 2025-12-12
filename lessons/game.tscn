@@ -1,13 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://c62bk8cggi6yq"]
+[gd_scene load_steps=8 format=3 uid="uid://c62bk8cggi6yq"]
 
+[ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_sepuf"]
 [ext_resource type="PackedScene" uid="uid://l5vkm11cgaib" path="res://lessons/simple_obstacle.tscn" id="1_yasw7"]
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="3_4o7yg"]
+[ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="3_gkp25"]
+[ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="5_sepuf"]
+[ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="6_cpqg5"]
+[ext_resource type="Script" uid="uid://b2l0dire58nij" path="res://assets/countdown/count_down.gd" id="7_viysf"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_sepuf")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_yasw7")]
 position = Vector2(430, -163)
 
 [node name="Circuit" parent="." instance=ExtResource("3_4o7yg")]
 position = Vector2(1002, 620)
+
+[node name="FinishLine" parent="." instance=ExtResource("3_gkp25")]
+unique_name_in_owner = true
+position = Vector2(554, 872)
+
+[node name="Runner" parent="." instance=ExtResource("5_sepuf")]
+unique_name_in_owner = true
+position = Vector2(574, 820)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 219.0
+theme = ExtResource("6_cpqg5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_viysf")
+metadata/_custom_type_script = "uid://b2l0dire58nij"
