@@ -1,6 +1,4 @@
-res://lessons/circuit.tscn
-res://runner.gdshader
-res://assets/finish_line/finish_line.tscn
 res://lessons/game.tscn
-res://runner.gd
-res://lessons/game.gd
+res://runner.gdshader
+res://lessons/pause_screen.gd
+res://lessons/pause_screen.tscn

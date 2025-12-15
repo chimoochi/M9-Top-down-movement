@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c62bk8cggi6yq"]
+[gd_scene load_steps=9 format=3 uid="uid://c62bk8cggi6yq"]
 
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_sepuf"]
 [ext_resource type="PackedScene" uid="uid://l5vkm11cgaib" path="res://lessons/simple_obstacle.tscn" id="1_yasw7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="5_sepuf"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="6_cpqg5"]
 [ext_resource type="Script" uid="uid://b2l0dire58nij" path="res://assets/countdown/count_down.gd" id="7_viysf"]
+[ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="8_tpjcj"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -37,3 +38,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_viysf")
 metadata/_custom_type_script = "uid://b2l0dire58nij"
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("8_tpjcj")]
+unique_name_in_owner = true
+visible = false
