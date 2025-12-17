@@ -1,4 +1,6 @@
 res://lessons/game.tscn
 res://runner.gdshader
-res://lessons/pause_screen.gd
 res://lessons/pause_screen.tscn
+res://bouncer.tscn
+res://bouncer.gd
+res://dust.tscn
