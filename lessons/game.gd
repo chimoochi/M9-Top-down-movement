@@ -7,6 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	_finish_line.body_entered.connect(func (body: Node) -> void:
+		_bouncer.set_physics_process(false)
 		if body is not Runner:
 			return
 		var runner := body as Runner
@@ -23,9 +24,11 @@ func _ready() -> void:
 		)
 	)
 
-	_finish_line.confettis_finished.connect(
-		get_tree().reload_current_scene.call_deferred
+	_finish_line.confettis_finished.connect(func():
+		
+		get_tree().reload_current_scene.call_deferred()
 	)
+
 	_count_down.start_counting()
 	_runner.set_physics_process(false)
 	_count_down.counting_finished.connect(

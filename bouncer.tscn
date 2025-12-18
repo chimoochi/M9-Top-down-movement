@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clocrjlx2h2or" path="res://dust.tscn" id="5_w2htc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfbw2"]
-radius = 55.655346
+radius = 27.777718
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hfbw2"]
 shader = ExtResource("4_t6rnc")
@@ -19,6 +19,7 @@ shader_parameter/line_thickness = 1.21
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_12ok7"]
+radius = 1.1845869
 
 [node name="Bouncer" type="CharacterBody2D"]
 position = Vector2(0, 11)
@@ -60,5 +61,21 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -27)
-scale = Vector2(2.4799979, 3.2399998)
+scale = Vector2(18.628212, 21.725431)
 shape = SubResource("CircleShape2D_12ok7")
+
+[node name="Raycasts" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -29)
+
+[node name="RayCast2D3" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-30, 60)
+
+[node name="RayCast2D" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(60, 50)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-60, 50)
+
+[node name="RayCast2D4" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(30, 60)
